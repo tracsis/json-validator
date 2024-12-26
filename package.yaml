@@ -17,7 +17,6 @@ dependencies:
 
 library:
   source-dirs: src
-  ghc-options: -O2
   dependencies:
     - bytestring
     - containers
@@ -30,7 +29,7 @@ executables:
   json-validator-exe:
     source-dirs: app
     main: Main.hs
-    ghc-options: -threaded -rtsopts -with-rtsopts=-N -O2
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - bytestring
       - text
@@ -42,14 +41,14 @@ executables:
   dump-state-machine:
     source-dirs: dump-state-machine
     main: Main.hs
-    ghc-options: -threaded -rtsopts -with-rtsopts=-N -O2
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - json-validator
 
   json-test:
     source-dirs: json-test
     main: Main.hs
-    ghc-options: -threaded -rtsopts -with-rtsopts=-N -O2
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - json-validator
       - bytestring
