@@ -1,0 +1,55 @@
+name: json-validator
+version: 0.1.0.0
+homepage: https://github.com/tracsis/json-validator
+license: BSD3
+license-file: LICENSE
+author: David Turner
+maintainer: Tracsis plc
+copyright: 2017 Tracsis plc
+category: Web
+build-type: Simple
+extra-source-files: README.md
+
+language: Haskell2010
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  ghc-options: -O2
+  dependencies:
+    - bytestring
+    - containers
+    - mtl
+    - text
+    - word8
+    - array
+
+executables:
+  json-validator-exe:
+    source-dirs: app
+    main: Main.hs
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N -O2
+    dependencies:
+      - bytestring
+      - text
+      - json-validator
+      - criterion
+      - aeson
+      - parallel
+
+  dump-state-machine:
+    source-dirs: dump-state-machine
+    main: Main.hs
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N -O2
+    dependencies:
+      - json-validator
+
+  json-test:
+    source-dirs: json-test
+    main: Main.hs
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N -O2
+    dependencies:
+      - json-validator
+      - bytestring
