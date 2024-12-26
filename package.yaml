@@ -18,16 +18,16 @@ tested-with: GHC ==8.10.7 || ==9.4.8 || ==9.8.2 || ==9.10.1 || ==9.12.1
 
 dependencies:
   - base >= 4.7 && < 5
+  - bytestring >= 0.10 && < 1
 
 library:
   source-dirs: src
   dependencies:
-    - bytestring
-    - containers
-    - mtl
-    - text
-    - word8
-    - array
+    - array >= 0.5 && < 1
+    - containers >= 0.6 && < 1
+    - mtl >= 2.2 && < 3
+    - text >= 1.2 && < 3
+    - word8 >= 0.1 && < 1
 
 executables:
   json-validator-exe:
@@ -35,12 +35,11 @@ executables:
     main: Main.hs
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
-      - bytestring
-      - text
       - json-validator
-      - criterion
-      - aeson
-      - parallel
+      - aeson >= 1.5 && < 3
+      - criterion >= 1.5 && < 2
+      - parallel >= 3.2 && < 4
+      - text >= 1.2 && < 3
 
   dump-state-machine:
     source-dirs: dump-state-machine
@@ -55,4 +54,3 @@ executables:
     ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - json-validator
-      - bytestring
