@@ -246,9 +246,8 @@ nodesWithOneOutgoingTransitionWhichIsInternal
     ]
 
 collapsedTarget :: Int -> Int
-collapsedTarget n = case lookup n nodesWithOneOutgoingTransitionWhichIsInternal of
-  Nothing -> n
-  Just n' -> collapsedTarget n'
+collapsedTarget n =
+  maybe n collapsedTarget $ lookup n nodesWithOneOutgoingTransitionWhichIsInternal
 
 transitionEdges :: [TransitionEdge]
 transitionEdges = map (mapTarget collapsedTarget) transitionEdgesBeforeCollapse

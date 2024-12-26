@@ -47,4 +47,5 @@ main = do
   ]
 
 calculateWithStrategy :: Strategy [Bool] -> [BL.ByteString] -> Bool
-calculateWithStrategy strat input = and ((map Automaton.isValidJson input) `using` strat)
+calculateWithStrategy strat input =
+  and (map Automaton.isValidJson input `using` strat)
