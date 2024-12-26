@@ -12,6 +12,8 @@ extra-source-files: README.md
 
 language: Haskell2010
 
+tested-with: GHC ==8.10.7 || ==9.4.8 || ==9.8.2 || ==9.10.1 || ==9.12.1
+
 dependencies:
   - base >= 4.7 && < 5
 
