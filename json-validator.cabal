@@ -6,8 +6,11 @@ cabal-version: 1.12
 
 name:           json-validator
 version:        0.1.0.0
+synopsis:       Validates JSON
+description:    Validates JSON.
 category:       Web
-homepage:       https://github.com/tracsis/json-validator
+homepage:       https://github.com/tracsis/json-validator#readme
+bug-reports:    https://github.com/tracsis/json-validator/issues
 author:         David Turner
 maintainer:     Tracsis plc
 copyright:      2017 Tracsis plc
@@ -18,6 +21,10 @@ tested-with:
     GHC ==8.10.7 || ==9.4.8 || ==9.8.2 || ==9.10.1 || ==9.12.1
 extra-source-files:
     README.md
+
+source-repository head
+  type: git
+  location: https://github.com/tracsis/json-validator
 
 library
   exposed-modules:

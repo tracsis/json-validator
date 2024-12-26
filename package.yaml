@@ -1,6 +1,8 @@
 name: json-validator
 version: 0.1.0.0
-homepage: https://github.com/tracsis/json-validator
+synopsis: Validates JSON
+description: Validates JSON.
+github: tracsis/json-validator
 license: BSD3
 license-file: LICENSE
 author: David Turner
